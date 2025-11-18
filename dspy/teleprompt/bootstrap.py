@@ -80,7 +80,6 @@ class BootstrapFewShot(Teleprompter):
 
         self._prepare_student_and_teacher(student, teacher)
         self._prepare_predictor_mappings()
-        # import ipdb; ipdb.set_trace()
         self._bootstrap()
 
         self.student = self._train()
@@ -198,7 +197,6 @@ class BootstrapFewShot(Teleprompter):
                         predictor.demos = predictor_cache[name]
 
                 if self.metric:
-                    # import ipdb; ipdb.set_trace()
                     metric_val = self.metric(example, prediction, trace)
                     if self.metric_threshold:
                         success = metric_val >= self.metric_threshold
